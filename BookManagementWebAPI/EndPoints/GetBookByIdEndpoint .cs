@@ -34,7 +34,7 @@ namespace BookManagementWebAPI.Endpoints
         public override void Configure()
         {
             Verbs(Http.GET);
-            Get("/api/books/{id}");
+            Get("/api/books/{id:guid}");
             AllowAnonymous();
         }
 
@@ -44,7 +44,7 @@ namespace BookManagementWebAPI.Endpoints
 
             _logger.LogInformation("Attempting to retrieve book with ID: {Id}", req.Id);
 
-            var book = await _context.Books.FindAsync(req.Id);
+            var book = await _context.Books.FindAsync(new object[] { req.Id }, ct);
 
             if (book is null)
             {
@@ -53,15 +53,16 @@ namespace BookManagementWebAPI.Endpoints
                 return;
             }
 
-
-            await SendAsync(new()
+            var response = new GetBookByIdResponse
             {
                 Id = book.Id,
                 Title = book.Title,
                 Author = book.Author,
                 PublicationYear = book.PublicationYear,
                 ISBN = book.ISBN
-            },cancellation: ct);
+            };
+
+            await SendAsync(response, cancellation: ct);
         }
     }
 }
