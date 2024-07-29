@@ -46,9 +46,10 @@ Update the appsettings.json file to include your database connection string.
   
 }
 ## Create Database
-Create Data folder and create ***AppDbContext.cs*** 
+  - Open SSMS app and connect database
+  - Create Data folder and create ***AppDbContext.cs*** 
 
-Database Name: Books
+  - Database Name: Books
 
 using BookManagementWebAPI.Models.Entities;
 
