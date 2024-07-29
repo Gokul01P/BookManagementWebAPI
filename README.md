@@ -1,5 +1,5 @@
 # BookManagementWebAPI
-## Overview
+*** Overview ***
 The Book Management Web API is a RESTful service built using .NET 8, Fast Endpoints, and Entity Framework 8. It allows for the management of a book collection with functionalities for CRUD operations. This API supports operations for retrieving, adding, updating, and deleting books.
 ## Setup Instructions
 Prerequisites
@@ -88,7 +88,7 @@ Response:
 }
 
 ### 2. READ OPERATION
-  -  (GET /api/books)
+i. (GET /api/books)
  
 Retrieves all books. Supports optional filtering by author and publication year.
 
@@ -102,3 +102,26 @@ Response:
 
 200 OK
 
+ii. GET /api/books/{id}
+    
+Retrieves a specific book by its ID.
+
+Response:
+
+  - 200 OK
+
+{
+
+  "id": "guid",
+  
+  "title": "Book Title",
+  
+  "author": "Book Author",
+  
+  "publicationYear": 2024,
+  
+  "isbn": "1234567890123"
+  
+}
+
+  - 404 Not Found if the book does not exist.
