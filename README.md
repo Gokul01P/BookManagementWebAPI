@@ -40,11 +40,36 @@ Update the appsettings.json file to include your database connection string.
 
   "ConnectionStrings": {
   
-    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=BookManagementDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "DefaultConnection": "Server=GOKUL\\SQLEXPRESS01;Database=BookWebApiDb;Trusted_Connection=True;MultipleActiveResultSets=true"
     
   }
   
 }
+## Create Database
+Create Data folder and create ***AppDbContext.cs*** 
+
+Database Name: Books
+
+using BookManagementWebAPI.Models.Entities;
+
+using Microsoft.EntityFrameworkCore;
+
+namespace BookManagementWebAPI.Data
+
+{
+
+    public class AppDbContext : DbContext
+    
+    {
+    
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
+        
+        public DbSet<Book> Books { get; set; }
+        
+    }
+    
+}
+
 ## Apply Migrations in NuGet pakage manager
   - add-migration "Inital Migration"
 
