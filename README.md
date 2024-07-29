@@ -1,4 +1,5 @@
 # BookManagementWebAPI
+
 ## Overview
 ***The Book Management Web API is a RESTful service built using .NET 8, Fast Endpoints, and Entity Framework 8. It allows for the management of a book collection with functionalities for CRUD operations. This API supports operations for retrieving, adding, updating, and deleting books.***
 ## Setup Instructions
@@ -7,9 +8,12 @@ Prerequisites
   - SQL Server Express or LocalDB installed.
   - Visual Studio Code or any other code editor of your choice.
 ## Clone the Repository
->git clone https://github.com/your-username/BookManagementAPI.git 
+git clone https://github.com/your-username/BookManagementAPI.git 
 
->cd BookManagementAPI
+cd BookManagementAPI
+## File format of the project
+![file format](https://github.com/user-attachments/assets/59db2ad5-0f96-4a5c-895d-a12366c70a9c)
+
 ## Restore Dependencies
 dotnet restore
 ## Download dependencies in NuGet Package manager
