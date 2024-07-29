@@ -11,8 +11,8 @@ namespace BookManagementAPI.Endpoints
         public required string Author { get; set; }
         public int PublicationYear { get; set; }
         public required string ISBN { get; set; }
-
     }
+
     public class CreateBookEndpoint : Endpoint<CreateBookRequest>
     {
         private readonly AppDbContext _context;
@@ -21,6 +21,7 @@ namespace BookManagementAPI.Endpoints
         {
             _context = context;
         }
+
         public override void Configure()
         {
             Post("/api/books");
@@ -29,6 +30,11 @@ namespace BookManagementAPI.Endpoints
 
         public override async Task HandleAsync(CreateBookRequest req, CancellationToken ct)
         {
+            if (string.IsNullOrWhiteSpace(req.Title) || string.IsNullOrWhiteSpace(req.Author) || string.IsNullOrWhiteSpace(req.ISBN))
+            {
+                ThrowError("Invalid request: Title, Author, and ISBN are required fields.");
+            }
+
             var book = new Book
             {
                 Title = req.Title,
@@ -42,6 +48,5 @@ namespace BookManagementAPI.Endpoints
 
             await SendAsync(book, cancellation: ct);
         }
-
     }
 }

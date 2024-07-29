@@ -4,6 +4,8 @@ using Microsoft.OpenApi.Models;
 using BookManagementWebAPI.Data;
 using FastEndpoints.Swagger;
 
+//using BookManagementAPI.Middlewares;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -28,7 +30,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Book Management API v1"));
 }
 
+
 app.UseHttpsRedirection();
+app.UseMiddleware<ExceptionMiddleware>();
+
 app.UseAuthorization();
 app.UseFastEndpoints();
 

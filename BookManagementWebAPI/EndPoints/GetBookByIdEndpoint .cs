@@ -9,7 +9,7 @@ namespace BookManagementWebAPI.Endpoints
     public class GetBookByIdRequest
     {
         public Guid Id { get; set; }
-    }
+    } 
 
     public class GetBookByIdResponse
     {

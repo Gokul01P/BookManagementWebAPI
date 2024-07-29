@@ -27,5 +27,9 @@ namespace BookManagementWebAPI.Endpoints
             var books = await _context.Books.ToListAsync(ct);
             await SendAsync(books, cancellation: ct);
         }
+        public async Task<List<Book>> GetBooksForTestingAsync(CancellationToken ct)
+        {
+            return await _context.Books.ToListAsync(ct);
+        }
     }
 }
