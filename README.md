@@ -37,13 +37,11 @@ Open the project in Visual Studio 2022
 Update the appsettings.json file to include your database connection string.
 
 {
-
   "ConnectionStrings": {
   
     "DefaultConnection": "Server=GOKUL\\SQLEXPRESS01;Database=BookWebApiDb;Trusted_Connection=True;MultipleActiveResultSets=true"
     
   }
-  
 }
 ## Create Database
   - Open SSMS app and connect database
@@ -59,8 +57,7 @@ namespace BookManagementWebAPI.Data
 
 {
 
-    public class AppDbContext : DbContext
-    
+    public class AppDbContext : DbContext   
     {
     
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options){}
