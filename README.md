@@ -6,3 +6,21 @@ Prerequisites
   - .NET 8 SDK installed.
   - SQL Server Express or LocalDB installed.
   - Visual Studio Code or any other code editor of your choice.
+## Clone the Repository
+git clone https://github.com/your-username/BookManagementAPI.git
+cd BookManagementAPI
+## Restore Dependencies
+dotnet restore
+## Update Connection String
+Update the appsettings.json file to include your database connection string.
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=BookManagementDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
+## Apply Migrations in NuGet pakage manager
+add-migration "Inital Migration"
+update-database
+
+
