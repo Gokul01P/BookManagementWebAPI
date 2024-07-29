@@ -98,6 +98,9 @@ author (optional): Filter books by author.
 
 publicationYear (optional): Filter books by publication year.
 
+![Passport size Photo1](https://github.com/user-attachments/assets/679d01b5-52dc-4686-8a71-3392ee2e5845)
+
+
 Response:
 
 200 OK
