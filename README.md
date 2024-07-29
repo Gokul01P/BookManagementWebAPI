@@ -68,6 +68,9 @@ namespace BookManagementWebAPI.Data
     
 }
 
+## Add services to Program.cs
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 ## Apply Migrations in NuGet pakage manager
   - add-migration "Inital Migration"
 
