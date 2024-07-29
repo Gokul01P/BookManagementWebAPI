@@ -58,8 +58,47 @@ Adds a new book. All required fields must be provided.
 Request Body:
 
 {
-  "title": "New Book Title",\n
+
+  "title": "New Book Title",
+  
   "author": "New Book Author",
+  
   "publicationYear": 2024,
+  
   "isbn": "9876543210987"
+  
 }
+
+Response:
+
+201 Created
+
+{
+
+  "id": "guid",
+  
+  "title": "New Book Title",
+  
+  "author": "New Book Author",
+  
+  "publicationYear": 2024,
+  
+  "isbn": "9876543210987"
+  
+}
+
+### 2. READ OPERATION
+  -  (GET /api/books)
+ 
+Retrieves all books. Supports optional filtering by author and publication year.
+
+Query Parameters:
+
+author (optional): Filter books by author.
+
+publicationYear (optional): Filter books by publication year.
+
+Response:
+
+200 OK
+
