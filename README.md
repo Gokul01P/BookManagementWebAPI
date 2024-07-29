@@ -5,7 +5,7 @@
 ## Setup Instructions
 Prerequisites
   - .NET 8 SDK installed.
-  - SQL Server Express or LocalDB installed.
+  - SQL Server Express or LocalDB installed and SSMS.
   - Visual Studio Code or any other code editor of your choice.
 ## Clone the Repository
 git clone https://github.com/your-username/BookManagementAPI.git 
@@ -130,17 +130,56 @@ Response:
 
   - 404 Not Found if the book does not exist.
 
-## DELETE OPERATION
- DELETE /api/books/{id}
+## 3. DELETE OPERATION
+DELETE /api/books/{id}
  
 Deletes a book by its ID.
 
 Response:
 
-  - 204 No Content if the deletion was successful.
+  - 200 No Content if the deletion was successful.
 
   - 404 Not Found if the book does not exist.
 
+## 4. PUT OPERATION
+PUT /api/books/{id}
+
+Updates an existing book. Ensures the book exists before updating.
+
+Request Body:
+
+{
+
+  "title": "Updated Book Title",
+  
+  "author": "Updated Book Author",
+  
+  "publicationYear": 2025,
+  
+  "isbn": "1234567890123"
+  
+}
+
+Response:
+
+  - 200 OK
+    
+{
+
+  "id": "guid",
+  
+  "title": "Updated Book Title",
+  
+  "author": "Updated Book Author",
+  
+  "publicationYear": 2025,
+  
+  "isbn": "1234567890123"
+  
+}
+
+  - 404 Not Found if the book does not exist.
+    
 ## Error Handling
 
 Global error handling is implemented to provide consistent responses for various error conditions. The API returns appropriate HTTP status codes and error messages:
