@@ -14,6 +14,7 @@ cd BookManagementAPI
 
 ## File format of the project
 Open the project in Visual Studio 2022
+
 ![file format](https://github.com/user-attachments/assets/59db2ad5-0f96-4a5c-895d-a12366c70a9c)
 
 ## Restore Dependencies
