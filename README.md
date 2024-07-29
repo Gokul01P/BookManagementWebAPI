@@ -52,4 +52,14 @@ The API will be available at 'http://localhost:5000'.
 ## Endpoints
 ### 1. CREATE OPERATION
   (POST /api/books)
+  
 Adds a new book. All required fields must be provided.
+
+Request Body:
+
+{
+  "title": "New Book Title",\n
+  "author": "New Book Author",
+  "publicationYear": 2024,
+  "isbn": "9876543210987"
+}
