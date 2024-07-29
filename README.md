@@ -21,6 +21,7 @@ Update the appsettings.json file to include your database connection string.
 }
 ## Apply Migrations in NuGet pakage manager
 add-migration "Inital Migration"
+
 update-database
 
 
