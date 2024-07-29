@@ -7,9 +7,9 @@ Prerequisites
   - SQL Server Express or LocalDB installed.
   - Visual Studio Code or any other code editor of your choice.
 ## Clone the Repository
-git clone https://github.com/your-username/BookManagementAPI.git 
+>git clone https://github.com/your-username/BookManagementAPI.git 
 
-cd BookManagementAPI
+>cd BookManagementAPI
 ## Restore Dependencies
 dotnet restore
 ## Download dependencies in NuGet Package manager
