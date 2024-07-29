@@ -15,9 +15,13 @@ dotnet restore
 Update the appsettings.json file to include your database connection string.
 
 {
+
   "ConnectionStrings": {
+  
     "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=BookManagementDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+    
   }
+  
 }
 ## Apply Migrations in NuGet pakage manager
 add-migration "Inital Migration"
